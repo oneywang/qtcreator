@@ -27,3 +27,6 @@ qtcreatorcdbext32 //cdb调试需要=
 
 10.build
 help 
+
+11.build 
+task/todo/beatiful/bookmark/vcsbase/git/cmakeprojectmanager //效率工具
