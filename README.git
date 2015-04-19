@@ -1,0 +1,22 @@
+1. build
+creator core helloworld 
+
+2.build 
+bineditor  imageview texteditor
+
+3.build
+projectexplorer classview cppeditor cpptools  differeditor
+glsleditor pythoneditor
+
+4. build
+qmakeprojectmanager qtsupport resourceditor
+
+5.build
+debugger designer
+
+6.build
+qtcreator_ctrlc_stub(process_ctrlc_stub)
+
+7.copy /share to dist-dir
+
+8.copy jom.exe to dis-dir/bin
