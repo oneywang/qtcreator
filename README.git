@@ -15,8 +15,15 @@ qmakeprojectmanager qtsupport resourceditor
 debugger designer
 
 6.build
-qtcreator_ctrlc_stub(process_ctrlc_stub)
+qtcreator_ctrlc_stub(process_ctrlc_stub) //编译时候，需要这个来代理
 
-7.copy /share to dist-dir
+7.copy jom.exe to dis-dir/bin //编译时候，需要这个来代替nmake
 
-8.copy jom.exe to dis-dir/bin
+8.copy /share to dist-dir //有theme templates等配置文件
+
+9.build
+qtcreator_process_stub(process_stub) //调试时候需要这个来代理
+qtcreatorcdbext32 //cdb调试需要=
+
+10.build
+help 
