@@ -45,8 +45,9 @@
 #include <projectexplorer/abi.h>
 #include <projectexplorer/projectexplorerconstants.h>
 #include <texteditor/fontsettings.h>
+#ifdef SUPPORTLINUX
 #include <remotelinux/remotelinux_constants.h>
-
+#endif
 #include <QVBoxLayout>
 #include <QFormLayout>
 #include <QLabel>

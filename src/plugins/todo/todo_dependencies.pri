@@ -2,7 +2,7 @@ QTC_PLUGIN_NAME = Todo
 QTC_LIB_DEPENDS += \
     cplusplus \
     extensionsystem \
-    qmljs \
+    #qmljs \
     utils
 QTC_PLUGIN_DEPENDS += \
     coreplugin \

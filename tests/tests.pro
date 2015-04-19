@@ -1,2 +1,2 @@
-TEMPLATE=subdirs
-SUBDIRS += auto manual tools
+#TEMPLATE=subdirs
+#SUBDIRS += auto manual tools

@@ -36,9 +36,9 @@
 
 #include <coreplugin/documentmanager.h>
 #include <coreplugin/fileiconprovider.h>
-
+#ifdef SUPPORTQML
 #include <qmljstools/qmljstoolsconstants.h>
-
+#endif
 #include <utils/mimetypes/mimedatabase.h>
 
 #include <QCoreApplication>
@@ -55,8 +55,11 @@ static bool priority(const QStringList &files)
     Utils::MimeDatabase mdb;
     QString type = mdb.mimeTypeForFile(files.at(0)).name();
     if (type.startsWith(QLatin1String("image/"))
+#ifdef SUPPOERQML
             || type == QLatin1String(QmlJSTools::Constants::QML_MIMETYPE)
-            || type == QLatin1String(QmlJSTools::Constants::JS_MIMETYPE))
+            || type == QLatin1String(QmlJSTools::Constants::JS_MIMETYPE)
+#endif
+        )
         return true;
     return false;
 }

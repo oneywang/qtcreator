@@ -32,7 +32,9 @@
 #include "todoitemsprovider.h"
 #include "constants.h"
 #include "cpptodoitemsscanner.h"
+#ifdef SUPPORTQML
 #include "qmljstodoitemsscanner.h"
+#endif
 #include "todoitemsmodel.h"
 #include "todoitemsscanner.h"
 
@@ -98,10 +100,10 @@ void TodoItemsProvider::createScanners()
 
     if (CppTools::CppModelManager::instance())
         m_scanners << new CppTodoItemsScanner(m_settings.keywords, this);
-
+#ifdef SUPPORTQML
     if (QmlJS::ModelManagerInterface::instance())
         m_scanners << new QmlJsTodoItemsScanner(m_settings.keywords, this);
-
+#endif
     foreach (TodoItemsScanner *scanner, m_scanners)
         connect(scanner, SIGNAL(itemsFetched(QString,QList<TodoItem>)), this,
             SLOT(itemsFetched(QString,QList<TodoItem>)), Qt::QueuedConnection);

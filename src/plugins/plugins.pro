@@ -12,51 +12,51 @@ SUBDIRS   = \
     bookmarks \
     projectexplorer \
     vcsbase \
-    perforce \
-    subversion \
+    #perforce \
+    #subversion \
     git \
-    cvs \
+    #cvs \
     cpptools \
     qtsupport \
     qmakeprojectmanager \
     debugger \
     help \
-    cpaster \
+    #cpaster \
     cmakeprojectmanager \
-    autotoolsprojectmanager \
-    fakevim \
-    emacskeys \
+    #autotoolsprojectmanager \
+    #fakevim \
+    #emacskeys \
     designer \
     resourceeditor \
-    genericprojectmanager \
-    qmljseditor \
-    qmlprojectmanager \
+    #genericprojectmanager \
+    #qmljseditor \
+    #qmlprojectmanager \
     glsleditor \
     pythoneditor \
-    mercurial \
-    bazaar \
+    #mercurial \
+    #bazaar \
     classview \
     tasklist \
-    analyzerbase \
-    qmljstools \
-    macros \
-    remotelinux \
-    android \
-    valgrind \
+    #analyzerbase \
+    #qmljstools \
+    #macros \
+    #remotelinux \
+    #android \
+    #valgrind \
     todo \
-    qnx \
-    clearcase \
-    baremetal \
-    ios \
+    #qnx \
+    #clearcase \
+    #baremetal \
+    #ios \
     beautifier \
-    qmakeandroidsupport \
-    winrt \
-    qmlprofiler \
-    welcome
+    #qmakeandroidsupport \
+    #winrt \
+    #qmlprofiler \
+    #welcome
 
 DO_NOT_BUILD_QMLDESIGNER = $$(DO_NOT_BUILD_QMLDESIGNER)
 isEmpty(DO_NOT_BUILD_QMLDESIGNER) {
-    SUBDIRS += qmldesigner
+    #SUBDIRS += qmldesigner
 } else {
     warning("QmlDesigner plugin has been disabled.")
 }

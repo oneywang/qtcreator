@@ -34,10 +34,10 @@ DATA_DIRS = \
     styles \
     rss \
     debugger \
-    qmldesigner \
-    qmlicons \
-    qml \
-    qml-type-descriptions \
+    #qmldesigner \
+    #qmlicons \
+    #qml \
+    #qml-type-descriptions \
     generic-highlighter \
     glsl \
     cplusplus

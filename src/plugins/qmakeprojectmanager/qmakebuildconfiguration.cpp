@@ -56,8 +56,9 @@
 #include <utils/qtcassert.h>
 #include <utils/qtcprocess.h>
 #include <utils/qtcassert.h>
+#ifdef SUPPORTMOBILE
 #include <android/androidmanager.h>
-
+#endif
 #include <QDebug>
 #include <QInputDialog>
 #include <QLoggingCategory>

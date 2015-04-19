@@ -47,8 +47,10 @@
 
 // for opening the respective coding style preferences
 #include <cpptools/cpptoolsconstants.h>
+#ifdef SUPPORTQML
 #include <qmljseditor/qmljseditorconstants.h>
 #include <qmljstools/qmljstoolsconstants.h>
+#endif
 
 #include <QPointer>
 #include <QSettings>
@@ -270,8 +272,10 @@ void BehaviorSettingsPage::openCodingStylePreferences(TabSettingsWidget::CodingS
     case TabSettingsWidget::CppLink:
         Core::ICore::showOptionsDialog(CppTools::Constants::CPP_CODE_STYLE_SETTINGS_ID);
         break;
+#ifdef SUPPORTQML
     case TabSettingsWidget::QtQuickLink:
         Core::ICore::showOptionsDialog(QmlJSTools::Constants::QML_JS_CODE_STYLE_SETTINGS_ID);
         break;
+#endif
     }
 }

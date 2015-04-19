@@ -246,5 +246,6 @@ tmp/
 /*-debug/
 /*-release/
 
-# jom.exe
+# jom.exe & clang-format.exe
 !/jom.exe
+!/clang-format.exe

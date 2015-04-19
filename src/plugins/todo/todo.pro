@@ -13,7 +13,7 @@ HEADERS += todoplugin.h \
     todoitemsmodel.h \
     todoitemsscanner.h \
     cpptodoitemsscanner.h \
-    qmljstodoitemsscanner.h \
+    #qmljstodoitemsscanner.h \
     lineparser.h \
     todooutputtreeview.h
 SOURCES += todoplugin.cpp \
@@ -27,7 +27,7 @@ SOURCES += todoplugin.cpp \
     todoitemsmodel.cpp \
     todoitemsscanner.cpp \
     cpptodoitemsscanner.cpp \
-    qmljstodoitemsscanner.cpp \
+    #qmljstodoitemsscanner.cpp \
     lineparser.cpp \
     todooutputtreeview.cpp
 

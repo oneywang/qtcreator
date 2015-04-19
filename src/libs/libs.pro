@@ -8,12 +8,12 @@ SUBDIRS   = \
     utils \
     languageutils \
     cplusplus \
-    qmljs \
-    qmldebug \
-    qmleditorwidgets \
+    #qmljs \
+    #qmldebug \
+    #qmleditorwidgets \
     glsl \
     ssh \
-    timeline
+    #timeline
 
 for(l, SUBDIRS) {
     QTC_LIB_DEPENDS =
