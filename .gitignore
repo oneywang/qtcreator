@@ -1,7 +1,6 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
 
-!/jom.exe
 *~
 *.autosave
 *.a
@@ -246,3 +245,6 @@ tmp/
 # qbs builds
 /*-debug/
 /*-release/
+
+# jom.exe
+!/jom.exe
