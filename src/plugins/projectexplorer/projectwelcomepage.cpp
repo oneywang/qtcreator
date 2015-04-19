@@ -30,8 +30,10 @@
 
 #include "projectwelcomepage.h"
 
+#ifdef SUPPORTQML
 #include <QQmlContext>
 #include <QQmlEngine>
+#endif
 #include <QFileInfo>
 #include <QDir>
 
@@ -220,6 +222,7 @@ ProjectWelcomePage::ProjectWelcomePage() :
 
 void ProjectWelcomePage::facilitateQml(QQmlEngine *engine)
 {
+#ifdef SUPPORTQML
     m_sessionModel = new SessionModel(this);
     m_projectModel = new ProjectModel(this);
 
@@ -227,6 +230,7 @@ void ProjectWelcomePage::facilitateQml(QQmlEngine *engine)
     ctx->setContextProperty(QLatin1String("sessionList"), m_sessionModel);
     ctx->setContextProperty(QLatin1String("projectList"), m_projectModel);
     ctx->setContextProperty(QLatin1String("projectWelcomePage"), this);
+#endif
 }
 
 QUrl ProjectWelcomePage::pageLocation() const

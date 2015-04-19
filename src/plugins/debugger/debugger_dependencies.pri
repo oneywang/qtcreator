@@ -5,8 +5,8 @@ QTC_LIB_DEPENDS += \
     extensionsystem \
     languageutils \
     utils \
-    qmldebug \
-    qmljs \
+    #qmldebug \
+    #qmljs \
     ssh
 QTC_PLUGIN_DEPENDS += \
     coreplugin \

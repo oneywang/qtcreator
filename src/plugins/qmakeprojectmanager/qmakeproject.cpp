@@ -46,7 +46,9 @@
 #include <coreplugin/icore.h>
 #include <coreplugin/progressmanager/progressmanager.h>
 #include <cpptools/cppmodelmanager.h>
+#ifdef SUPPORTQML
 #include <qmljs/qmljsmodelmanagerinterface.h>
+#endif
 #include <projectexplorer/buildmanager.h>
 #include <projectexplorer/buildtargetinfo.h>
 #include <projectexplorer/deploymentdata.h>
@@ -613,6 +615,7 @@ void QmakeProject::updateCppCodeModel()
 
 void QmakeProject::updateQmlJSCodeModel()
 {
+#ifdef SUPPORTQML
     QmlJS::ModelManagerInterface *modelManager = QmlJS::ModelManagerInterface::instance();
     if (!modelManager)
         return;
@@ -651,6 +654,7 @@ void QmakeProject::updateQmlJSCodeModel()
     projectInfo.allResourceFiles.removeDuplicates();
 
     modelManager->updateProjectInfo(projectInfo, this);
+#endif
 }
 
 void QmakeProject::updateRunConfigurations()

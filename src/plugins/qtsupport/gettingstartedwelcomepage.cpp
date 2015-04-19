@@ -59,9 +59,11 @@
 #include <QPushButton>
 #include <QMessageBox>
 #include <QApplication>
+#ifdef SUPPORTQML
 #include <QQuickImageProvider>
 #include <QQmlEngine>
 #include <QQmlContext>
+#endif
 #include <QDesktopServices>
 
 using namespace Utils;
@@ -168,6 +170,7 @@ public:
     bool m_shutdown;
 };
 
+#ifdef SUPPORTQML
 class HelpImageProvider : public QQuickImageProvider
 {
 public:
@@ -209,6 +212,7 @@ private:
     Fetcher m_fetcher;
     QMutex m_mutex;
 };
+#endif
 
 ExamplesWelcomePage::ExamplesWelcomePage()
     : m_engine(0),  m_showExamples(false)
@@ -256,6 +260,7 @@ QUrl ExamplesWelcomePage::pageLocation() const
 
 void ExamplesWelcomePage::facilitateQml(QQmlEngine *engine)
 {
+#ifdef SUPPORTQML
     m_engine = engine;
     m_engine->addImageProvider(QLatin1String("helpimage"), new HelpImageProvider);
     ExamplesListModelFilter *proxy = new ExamplesListModelFilter(examplesModel(), this);
@@ -273,6 +278,7 @@ void ExamplesWelcomePage::facilitateQml(QQmlEngine *engine)
         rootContenxt->setContextProperty(QLatin1String("tutorialsModel"), proxy);
     }
     rootContenxt->setContextProperty(QLatin1String("gettingStarted"), this);
+#endif
 }
 
 Core::Id ExamplesWelcomePage::id() const

@@ -556,12 +556,16 @@ DebuggerEngine *DebuggerRunControlFactory::createEngine(DebuggerEngineType et,
         return createCdbEngine(sp, errorMessage);
     case PdbEngineType:
         return createPdbEngine(sp);
+#ifdef SUPPORTQML
     case QmlEngineType:
         return createQmlEngine(sp);
+#endif
     case LldbEngineType:
         return createLldbEngine(sp);
+#ifdef SUPPORTQML
     case QmlCppEngineType:
         return createQmlCppEngine(sp, errorMessage);
+#endif
     default:
         break;
     }

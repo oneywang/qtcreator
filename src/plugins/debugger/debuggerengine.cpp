@@ -69,9 +69,9 @@
 #include <utils/macroexpander.h>
 #include <utils/qtcassert.h>
 #include <utils/savedaction.h>
-
+#ifdef SUPPORTQML
 #include <qmljs/consolemanagerinterface.h>
-
+#endif
 #include <QDebug>
 #include <QTimer>
 #include <QFileInfo>
@@ -507,10 +507,11 @@ void DebuggerEngine::showMessage(const QString &msg, int channel, int timeout) c
     }
     //if (msg.size() && msg.at(0).isUpper() && msg.at(1).isUpper())
     //    qDebug() << qPrintable(msg) << "IN STATE" << state();
+#ifdef SUPPORTQML
     QmlJS::ConsoleManagerInterface *consoleManager = QmlJS::ConsoleManagerInterface::instance();
     if (channel == ConsoleOutput && consoleManager)
         consoleManager->printToConsolePane(QmlJS::ConsoleItem::UndefinedType, msg);
-
+#endif
     Internal::showMessage(msg, channel, timeout);
     if (d->m_runControl) {
         switch (channel) {

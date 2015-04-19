@@ -38,7 +38,9 @@
 
 #include <projectexplorer/project.h>
 #include <utils/runextensions.h>
+#ifdef SUPPORTQML
 #include <qmljs/qmljsmodelmanagerinterface.h>
+#endif
 #include <utils/hostosinfo.h>
 #include <utils/qtcassert.h>
 
@@ -123,7 +125,7 @@ private slots:
             qWarning("%s", qPrintable(errorMessage));
             return;
         }
-
+#ifdef SUPPORTQML
         // update qmldump path for all the project
         QmlJS::ModelManagerInterface *modelManager = QmlJS::ModelManagerInterface::instance();
         if (!modelManager)
@@ -140,7 +142,7 @@ private slots:
             projectInfo.qmlDumpHasRelocatableFlag = version->hasQmlDumpWithRelocatableFlag();
             modelManager->updateProjectInfo(projectInfo, update.project);
         }
-
+#endif
         // clean up
         qmlDumpBuilds()->remove(qtId);
         deleteLater();

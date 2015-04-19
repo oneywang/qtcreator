@@ -145,7 +145,7 @@ include(cdb/cdb.pri)
 include(gdb/gdb.pri)
 include(pdb/pdb.pri)
 include(lldb/lldb.pri)
-include(qml/qml.pri)
+#include(qml/qml.pri)
 include(namedemangler/namedemangler.pri)
 
 include(shared/shared.pri)
